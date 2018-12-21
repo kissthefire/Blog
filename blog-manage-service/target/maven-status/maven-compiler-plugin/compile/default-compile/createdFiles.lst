@@ -1,0 +1,3 @@
+com\ManageServiceApp.class
+com\blog\manage\dao\UserDao.class
+com\blog\manage\service\impl\UserServiceImpl.class

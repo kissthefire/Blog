@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.blog.manage.dao.UserDao">
+    <select id="queryUserById" parameterType="int" resultType="com.blog.manage.entity.bean.User">
+        SELECT id,user_name userName,password,phone,email,real_name realName,birthday,sex,`position`,description,create_time createTime,
+        modify_time modifyTime,modify_by modifyBy,locked,login_ip loginIp FROM  sys_user WHERE id=#{id}
+    </select>
+
+    <insert id="saveUser" parameterType="com.blog.manage.entity.bean.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO sys_user(user_name,password,phone,email,real_name,birthday,sex,position,description,create_time,
+        modify_time,modify_by,locked,login_ip)
+        VALUES(#{userName},#{password},#{phone},#{email},#{realName},#{birthday},#{sex},#{position},#{description},
+        #{createTime},#{modifyTime},#{modifyBy},#{locked},#{loginIp})
+    </insert>
+</mapper>
